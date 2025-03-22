@@ -117,3 +117,5 @@ const initDB = async () => {
         process.exit(1);
     }
 };
+
+initDB();
