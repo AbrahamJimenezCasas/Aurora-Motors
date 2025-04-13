@@ -50,12 +50,15 @@ const initDB = async () => {
         await pool.query(`CREATE TABLE coches (
                     id CHAR(36) PRIMARY KEY NOT NULL,
                     modelo VARCHAR(100) NOT NULL,
-                    descripcion TEXT DEFAULT NULL,
                     caracteristicas TEXT DEFAULT NULL,
+                    categoria ENUM (Clase B, Clase C, Clase D, Clase E, Clase F, Clase S) DEFAULT Clase E,
                     precio DECIMAL(10, 2) NOT NULL,
+                    descripcion TEXT DEFAULT NULL,
                     disponible BOOLEAN DEFAULT TRUE,
+                    adminId CHAR(36) NOT NULL,
                     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     updatedAt TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+                    FOREIGN KEY (adminId) REFERENCES usuarios(id) ON DELETE CASCADE
                 )`);
 
         await pool.query(`CREATE TABLE imagenes (
