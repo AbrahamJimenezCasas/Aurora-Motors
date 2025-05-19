@@ -56,7 +56,7 @@ const initDB = async () => {
                     descripcion TEXT DEFAULT NULL,
                     disponible BOOLEAN DEFAULT TRUE,
                     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    updatedAt TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMPc
+                    updatedAt TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
                 )`);
 
         await pool.query(`CREATE TABLE imagenes (
