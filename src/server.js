@@ -3,7 +3,7 @@ import fileUpload from "express-fileupload";
 import cors from "cors";
 import path from "path";
 
-import { router } from "./routes/index.js";
+import { router } from "./routes/indexRouter.js";
 
 import { UPLOADS_DIR } from "../env.js";
 
